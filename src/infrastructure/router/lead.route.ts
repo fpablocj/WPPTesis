@@ -8,5 +8,8 @@ const router: Router = Router();
  */
 const leadCtrl: LeadCtrl = container.get("lead.ctrl");
 router.post("/", leadCtrl.sendCtrl);
+router.get('/qr', (req, res) => {
+    leadCtrl.getQR(req, res);
+  });
 
 export { router };
